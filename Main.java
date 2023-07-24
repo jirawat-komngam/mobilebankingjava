@@ -1,10 +1,7 @@
 class Program {
     public void start() {
-        System.out.println("mobile banking");
-        System.out.println("1 create account");
-        System.out.println("2 account status");
-        System.out.println("3 deposit/withdraw");
-        System.out.println("4 transfer");
+        WelcomeOfficer welcomeOfficer = new WelcomeOfficer();
+        welcomeOfficer.call();
     }
 
 }
