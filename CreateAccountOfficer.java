@@ -19,7 +19,7 @@ public class CreateAccountOfficer implements Officer {
         String confirmPasswordInput = ear.nextLine();
         System.out.println("deposit");
         Double accountMoneyInput = Double.parseDouble(ear.nextLine());
-        AccountPOJO newAccountData = createAccount(accountNameInput, confirmPasswordInput, accountMoneyInput);
+        AccountPOJO newAccountData = createAccount(accountNameInput, accountPasswordInput, accountMoneyInput);
         accountDB.getAccountList().add(newAccountData);
         System.out.println("account created");
     }
