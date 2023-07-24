@@ -13,8 +13,11 @@ public class CreateAccountOfficer implements Officer {
         String accountNameInput = ear.nextLine();
         System.out.println("account password");
         String accountPasswordInput = ear.nextLine();
+        System.out.println("confirm Password");
+        String confirmPasswordInput = ear.nextLine();
         System.out.println("deposit");
         Double accountMoneyInput = Double.parseDouble(ear.nextLine());
         System.out.println("account created");
     }
+
 }
