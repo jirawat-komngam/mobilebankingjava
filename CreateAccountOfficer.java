@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class CreateAccountOfficer implements Officer {
     private Scanner ear;
+    private AccountDB accountDB;
 
-    CreateAccountOfficer() {
+    CreateAccountOfficer(AccountDB realAccountDB) {
         ear = new Scanner(System.in);
+        this.accountDB = realAccountDB;
     }
 
     public void call() {
@@ -17,7 +19,16 @@ public class CreateAccountOfficer implements Officer {
         String confirmPasswordInput = ear.nextLine();
         System.out.println("deposit");
         Double accountMoneyInput = Double.parseDouble(ear.nextLine());
+        AccountPOJO newAccountData = createAccount(accountNameInput, confirmPasswordInput, accountMoneyInput);
+        accountDB.getAccountList().add(newAccountData);
         System.out.println("account created");
     }
 
+    public AccountPOJO createAccount(String nameInput, String passwordInput, Double moneyInput) {
+        AccountPOJO newAccount = new AccountPOJO();
+        newAccount.setAccountName(nameInput);
+        newAccount.setAccountPassword(passwordInput);
+        newAccount.setAccountBalance(moneyInput);
+        return newAccount;
+    }
 }
