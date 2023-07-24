@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 class Program {
     public void start() {
-        AccountDB database = new AccountDB();
+        AccountDB database = new AccountDB(new ArrayList<>());
         CreateAccountOfficer newCreateAccountOfficer = new CreateAccountOfficer(database);
         WelcomeOfficer newWelcomeOfficer = new WelcomeOfficer(newCreateAccountOfficer);
         Bank newBank = new Bank(newWelcomeOfficer);
