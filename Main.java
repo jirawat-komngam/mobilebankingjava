@@ -4,7 +4,7 @@ class Program {
         System.out.println("1 create account");
         System.out.println("2 account status");
         System.out.println("3 deposit/withdraw");
-        System.out.println("3 4 transfer");
+        System.out.println("4 transfer");
     }
 
 }
