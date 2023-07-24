@@ -1,7 +1,8 @@
 class Program {
     public void start() {
-
-        Bank newBank = new Bank(null);
+        WelcomeOfficer newWelcomeOfficer = new WelcomeOfficer();
+        Bank newBank = new Bank(newWelcomeOfficer);
+        newBank.enterBank();
     }
 
 }
