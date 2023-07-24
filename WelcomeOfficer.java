@@ -6,6 +6,7 @@ public class WelcomeOfficer implements Officer {
 
     WelcomeOfficer(CreateAccountOfficer realCreateAccountOfficer) {
         createAccountOfficer = realCreateAccountOfficer;
+        ear = new Scanner(System.in);
     }
 
     public void call() {
