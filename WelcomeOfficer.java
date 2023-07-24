@@ -16,7 +16,13 @@ public class WelcomeOfficer implements Officer {
         System.out.println("3 deposit/withdraw");
         System.out.println("4 transfer");
         String userInput = ear.nextLine();
+        callOfficer(userInput);
 
     }
 
+    public void callOfficer(String input) {
+        if (input.equals("1")) {
+            createAccountOfficer.call();
+        }
+    }
 }
