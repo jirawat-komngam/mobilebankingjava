@@ -1,4 +1,10 @@
 public class AccountPOJO {
+    public AccountPOJO(String accountName, String accountPassword, Double accountBalance) {
+        this.accountName = accountName;
+        this.accountPassword = accountPassword;
+        this.accountBalance = accountBalance;
+    }
+
     private String accountName;
     private String accountPassword;
     private Double accountBalance;
