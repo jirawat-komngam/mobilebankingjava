@@ -1,28 +1,21 @@
+import java.util.Map;
+
 public class AccountPOJO {
-    public AccountPOJO(String accountName, String accountPassword, Double accountBalance) {
-        this.accountName = accountName;
-        this.accountPassword = accountPassword;
+
+    public AccountPOJO(Map<String, String> accountInfo, Double accountBalance) {
+        this.accountInfo = accountInfo;
         this.accountBalance = accountBalance;
     }
 
-    private String accountName;
-    private String accountPassword;
+    private Map<String, String> accountInfo;
     private Double accountBalance;
 
-    public String getAccountName() {
-        return accountName;
+    public Map<String, String> getAccountInfo() {
+        return accountInfo;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
-    }
-
-    public String getAccountPassword() {
-        return accountPassword;
-    }
-
-    public void setAccountPassword(String accountPassword) {
-        this.accountPassword = accountPassword;
+    public void setAccountInfo(Map<String, String> accountInfo) {
+        this.accountInfo = accountInfo;
     }
 
     public Double getAccountBalance() {
@@ -32,4 +25,5 @@ public class AccountPOJO {
     public void setAccountBalance(Double accountBalance) {
         this.accountBalance = accountBalance;
     }
+
 }
