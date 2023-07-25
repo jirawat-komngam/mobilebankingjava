@@ -12,19 +12,20 @@ public class WelcomeOfficer implements Officer {
     }
 
     public void call() {
-        System.out.println("mobile banking");
-        System.out.println("1 create account");
-        System.out.println("2 login");
-        String userInput = ear.nextLine();
-        callOfficer(userInput);
+        while (true) {
+            System.out.println("mobile banking");
+            System.out.println("1 create account");
+            System.out.println("2 login");
+            String userInput = ear.nextLine();
+            callOfficer(userInput);
+        }
 
     }
 
     public void callOfficer(String input) {
         if (input.equals("1")) {
             createAccountOfficer.call();
-        }
-        if (input.equals("2")) {
+        } else if (input.equals("2")) {
             askAccountOfficer.call();
         }
     }
