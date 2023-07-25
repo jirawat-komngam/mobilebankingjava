@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class AskAccountOfficer implements Officer {
     private Scanner ear;
     private AccountDB accountDB;
+    private AccountServiceOfficer accountServiceOfficer;
 
-    AskAccountOfficer(AccountDB realAccountDB) {
+    AskAccountOfficer(AccountDB realAccountDB, AccountServiceOfficer realaccountServiceOfficer) {
         ear = new Scanner(System.in);
         this.accountDB = realAccountDB;
+        this.accountServiceOfficer = realaccountServiceOfficer;
     }
 
     public void call() {
@@ -21,6 +23,7 @@ public class AskAccountOfficer implements Officer {
                 realPasswordInput = eachAccount.getAccountInfo().get(accountNameInput);
                 if (accountPasswordInput.equals(realPasswordInput)) {
                     System.out.println("login success");
+                    accountServiceOfficer.call();
                 }
             }
         }
