@@ -45,14 +45,24 @@ public class AccountServiceOfficer {
             System.out.println("withdraw");
             System.out.println("amount of money");
             Double moneyAmount = Double.parseDouble(ear.nextLine());
-            System.out.println("withdraw : \"500 baht\"\r\n" + //
-                    "");
+            System.out.println("withDraw : " + moneyAmount + " baht");
             System.out.println("confirm??");
             String confirmation = ear.nextLine();
             if (confirmation.equals("yes")) {
-                System.out.println("withdraw complete");
-                System.out.println("withdraw 500 baht");
-                System.out.println("balance 1000 baht");
+                System.out.println("withDraw  complete");
+                System.out.println("withDraw " + moneyAmount + "baht");
+                if (moneyAmount <= accountBalance) {
+                    Double newBalance = accountBalance - moneyAmount;
+                    System.out.println("balance :" + newBalance + "baht");
+                    for (AccountPOJO eachAccount : accountDB.getAccountList()) {
+                        if (eachAccount.getAccountInfo().containsKey(accountName)) {
+                            eachAccount.setAccountBalance(newBalance);
+                        }
+                    }
+                } else {
+                    System.out.println("your money is not enough");
+                }
+
             }
 
         }
