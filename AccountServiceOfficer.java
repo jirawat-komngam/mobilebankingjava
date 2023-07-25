@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class AccountServiceOfficer implements Officer {
+public class AccountServiceOfficer {
     private Scanner ear;
     private AccountDB accountDB;
 
@@ -9,9 +9,9 @@ public class AccountServiceOfficer implements Officer {
         ear = new Scanner(System.in);
     }
 
-    public void call() {
+    public void call(String accountName, Double accountBalance) {
 
-        System.out.println("welcome : kuy");
+        System.out.println("welcome : ");
         System.out.println("balance : 1000 baht");
         System.out.println("1 - deposit");
         System.out.println("2 - withdraw");
