@@ -4,7 +4,8 @@ class Program {
     public void start() {
         AccountDB database = new AccountDB(new ArrayList<>());
         CreateAccountOfficer newCreateAccountOfficer = new CreateAccountOfficer(database);
-        WelcomeOfficer newWelcomeOfficer = new WelcomeOfficer(newCreateAccountOfficer);
+        AskAccountOfficer newAskAccountOfficer = new AskAccountOfficer();
+        WelcomeOfficer newWelcomeOfficer = new WelcomeOfficer(newCreateAccountOfficer, newAskAccountOfficer);
         Bank newBank = new Bank(newWelcomeOfficer);
         newBank.enterBank();
     }
