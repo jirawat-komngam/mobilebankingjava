@@ -15,7 +15,8 @@ public class AccountServiceOfficer implements Officer {
         System.out.println("balance : 1000 baht");
         System.out.println("1 - deposit");
         System.out.println("2 - withdraw");
-
+        String userChoiceValues = ear.nextLine();
+        userChoice(userChoiceValues);
     };
 
     public void userChoice(String choice) {
