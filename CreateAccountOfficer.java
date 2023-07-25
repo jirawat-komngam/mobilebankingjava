@@ -17,15 +17,19 @@ public class CreateAccountOfficer implements Officer {
         String accountPasswordInput = ear.nextLine();
         System.out.println("confirm Password");
         String confirmPasswordInput = ear.nextLine();
-        System.out.println("deposit");
-        Double accountMoneyInput = Double.parseDouble(ear.nextLine());
-        AccountPOJO newAccount = new AccountPOJO(null, accountMoneyInput);
-        Map userNamePassword = new HashMap();
-        userNamePassword.put(accountNameInput, accountPasswordInput);
-        newAccount.setAccountInfo(userNamePassword);
-        newAccount.setAccountBalance(accountMoneyInput);
-        accountDB.getAccountList().add(newAccount);
-        System.out.println("account created");
+        if (accountNameInput.equals(confirmPasswordInput)) {
+            System.out.println("deposit");
+            Double accountMoneyInput = Double.parseDouble(ear.nextLine());
+            AccountPOJO newAccount = new AccountPOJO(null, accountMoneyInput);
+            Map userNamePassword = new HashMap();
+            userNamePassword.put(accountNameInput, accountPasswordInput);
+            newAccount.setAccountInfo(userNamePassword);
+            newAccount.setAccountBalance(accountMoneyInput);
+            accountDB.getAccountList().add(newAccount);
+            System.out.println("account created");
+        } else {
+            System.out.println("your password not equal confirmpassword");
+        }
     }
 
 }
