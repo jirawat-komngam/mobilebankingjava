@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class AskAccountOfficer implements Officer {
     private Scanner ear;
@@ -15,6 +15,7 @@ public class AskAccountOfficer implements Officer {
         System.out.println("login success");
         System.out.println("account name");
         String realPasswordInput = "";
+        Double balance = 0.0;
         String accountNameInput = ear.nextLine();
         for (AccountPOJO eachAccount : accountDB.getAccountList()) {
             if (eachAccount.getAccountInfo().containsKey(accountNameInput) == true) {
@@ -22,11 +23,14 @@ public class AskAccountOfficer implements Officer {
                 String accountPasswordInput = ear.nextLine();
                 realPasswordInput = eachAccount.getAccountInfo().get(accountNameInput);
                 if (accountPasswordInput.equals(realPasswordInput)) {
+                    balance = eachAccount.getAccountBalance();
                     System.out.println("login success");
-                    accountServiceOfficer.call();
+                    accountServiceOfficer.call(accountNameInput, balance);
+
                 }
             }
         }
 
     }
+
 }
