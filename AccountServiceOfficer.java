@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 public class AccountServiceOfficer {
     private Scanner ear;
-    private AccountDB accountDB;
 
-    AccountServiceOfficer(AccountDB realAccountDB) {
-        this.accountDB = realAccountDB;
+    AccountServiceOfficer() {
+
         ear = new Scanner(System.in);
     }
 
